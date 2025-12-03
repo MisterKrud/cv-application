@@ -4,7 +4,7 @@
 //add remove school?
 
 import { useState } from "react";
-import  './Education.css';
+import  '../styles/Education.css';
 
 
 
