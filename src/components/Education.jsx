@@ -2,6 +2,7 @@
 //push each school detail into an object
 //submit button to add school - then render the name
 //add remove school?
+//add edit school?
 
 import { useState } from "react";
 import  '../styles/Education.css';
@@ -9,8 +10,10 @@ import  '../styles/Education.css';
 
 
 export default function Education() {
-    const [education, setEducation] = useState({school: '', course:'', completed: ''})
-    const [schoolNumber, setSchoolNumber] = useState(1)
+    const blankEducation = {school: '', course:'', completed: ''}
+    const [schoolId, setSchoolId] = useState(0)
+    const [education, setEducation] = useState(blankEducation)
+    
     const [schools, setSchools] =useState([])
 
     const [school, setSchool] = useState('')
@@ -42,8 +45,15 @@ export default function Education() {
         
     }
 
+
+
     function addSchool(){
-        setSchools([...schools, education])
+        setSchoolId(schoolId+1)
+       const newEducation = {...education, id:schoolId }
+        setSchools([...schools, newEducation])
+        
+        // const blankEducation = {school: '', course: '', completed: ''}
+        setEducation(blankEducation)
 
     }
 
@@ -65,9 +75,9 @@ export default function Education() {
             <Input label="Course name" placeholder = "Enter name of course studied" value = {education.course} onChange={handleCourseChange} />{' '}
             <Input type="date" label="Completed" placeholder = "Enter date of course completion" value = {education.completed} onChange={handleCompletedChange} />{' '}
             <button onClick={(addSchool)}>Add School</button>
-            <div>Schools: {schools.map(s =>(
-                <p key={s.school}>{s.school}</p>
-            ))}</div>
+             {/* <div>Schools: {schools.map(s =>(
+                <p key={s.school}>{s.school} {s.id}</p>
+            ))}</div>  */}
             </>
         )
 
@@ -76,12 +86,12 @@ export default function Education() {
 
 
 
-function Input({label, placeholder, value, onChange, type}){
+function Input({label, placeholder, value, onChange, type, isSubmitted=false}){
     return (
     <>
-        <label>{label}</label>
+        <label>{label}{': '}</label>
     
-            <input type ={type} placeholder={placeholder} value={value} onChange={onChange} />
+            <input type ={type} placeholder={placeholder} value={value} onChange={onChange}  />
        </>
     )
 }
@@ -91,9 +101,12 @@ function EducationInfoFrame({school, course, completed}){
         <>
           
             
-            <h4>School: {school}</h4>
-            <h5>Course: {course}</h5>
-            <h5>Date completed: {completed}</h5>
+            <h4>School: </h4>
+            <p>{school}</p>
+            <h5>Course: </h5>
+            <p>{course}</p>
+            <h5>Date completed: </h5>
+            <p>{completed}</p>
         </>
     )
 }
