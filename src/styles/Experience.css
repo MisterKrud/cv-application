@@ -1,0 +1,11 @@
+.experience-frame {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: lightgreen;
+}
+
+input:hover, textarea:hover{
+    background-color:lightpink;
+}

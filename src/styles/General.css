@@ -1,0 +1,15 @@
+.general-information{
+    background-color:lightyellow;
+   
+}
+
+.user-details{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+.name-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

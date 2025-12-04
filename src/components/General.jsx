@@ -1,9 +1,9 @@
 import { useState } from "react";
+import '../styles/General.css';
 
 export default function General(){
     const [email, setEmail] = useState('')
     const [name, setName] = useState('')
-    const [lastName, setLastName] = useState('')
     const [phone, setPhone] = useState(' ')
 
     function handleEmailChange(e) {
@@ -19,13 +19,18 @@ export default function General(){
     }
     
     return (
-        <>
-        <h2>{name}</h2>
+        <div className = "general-information">
+            <div className = "user-details">
+       <div className="name-div"> 
+        <h2>Name: </h2> <p>{name}</p></div>
+       <div className="name-div"> <h3>Email:{' '} </h3> <p>{' '}{email}</p></div>
+      <div className="name-div">  <h3> Phone: </h3> <p>{phone}</p></div>
+       </div>
             <Input label="Name" placeholder = "name" value={name} onChange={handleNameChange}/>{' '}
             <Input type = "email" label="email" placeholder="email" value={email} onChange={handleEmailChange}/>{' '}
             <Input type = "phone" label = "phone" placeholder = "phone" value = {phone} onChange={handlePhoneChange} />{' '}
             <button>Submit</button>
-        </>
+        </div>
     )
 }
 

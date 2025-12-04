@@ -16,12 +16,9 @@ export default function Education() {
     
     const [schools, setSchools] =useState([])
 
-    const [school, setSchool] = useState('')
-    const [course, setCourse] = useState('')
-    const [completed, setCompleted] = useState('')
-
     const containerStyle = {
         display: 'flex',
+         justifyContent: 'space-evenly',
         backgroundColor: 'lightgreen'
     };
     
@@ -29,20 +26,16 @@ export default function Education() {
     function handleSchoolNameChange(e){
         const newEducation = {...education, school: (e.target.value)}
         setEducation(newEducation)
-        // setSchool(e.target.value)
     }
 
     function handleCourseChange(e){
         const newEducation = {...education, course: e.target.value}
-        setEducation(newEducation)
-        // setCourse(e.target.value)
+        setEducation(newEducation)    
     }
 
     function handleCompletedChange(e){
         const newEducation = {...education, completed: e.target.value}
-            setEducation(newEducation)
-        // setCompleted(e.target.value)
-        
+            setEducation(newEducation)      
     }
 
 
@@ -51,8 +44,6 @@ export default function Education() {
         setSchoolId(schoolId+1)
        const newEducation = {...education, id:schoolId }
         setSchools([...schools, newEducation])
-        
-        // const blankEducation = {school: '', course: '', completed: ''}
         setEducation(blankEducation)
 
     }
@@ -66,7 +57,7 @@ export default function Education() {
             {schools.map(sch => {
                 return (
                     <div style={containerStyle}>
-                        <EducationInfoFrame style={containerStyle} className="education-frame" school = {sch.school} course = {sch.course} completed={sch.completed} />
+                        <EducationInfoFrame  className="education-frame" school = {sch.school} course = {sch.course} completed={sch.completed} />
                     </div>
                 )
             })}
@@ -86,7 +77,7 @@ export default function Education() {
 
 
 
-function Input({label, placeholder, value, onChange, type, isSubmitted=false}){
+function Input({label, placeholder, value, onChange, type}){
     return (
     <>
         <label>{label}{': '}</label>
@@ -98,7 +89,7 @@ function Input({label, placeholder, value, onChange, type, isSubmitted=false}){
 function EducationInfoFrame({school, course, completed}){
    
     return (
-        <>
+        <div className = "education-frame">
           
             
             <h4>School: </h4>
@@ -107,7 +98,7 @@ function EducationInfoFrame({school, course, completed}){
             <p>{course}</p>
             <h5>Date completed: </h5>
             <p>{completed}</p>
-        </>
+        </div>
     )
 }
 
