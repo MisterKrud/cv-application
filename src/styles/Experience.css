@@ -1,11 +1,22 @@
 .experience-frame {
     display: flex;
-    align-content: center;
-    align-items: center;
+   
+    /* align-items: center; */
     justify-content: space-evenly;
     background-color: lightgreen;
 }
 
 input:hover, textarea:hover{
     background-color:lightpink;
+}
+
+.input-div{
+    display: block;
+}
+
+.user-details{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 0;
 }

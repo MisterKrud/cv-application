@@ -18,11 +18,7 @@ export default function Experience() {
 
   
 
-    const containerStyle = {
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        backgroundColor: 'lightpurple'
-    };
+
     
 
     function handleWorkplaceChange(e){
@@ -54,24 +50,25 @@ export default function Experience() {
     
    
         return(
-            <>
+             
+            <div>
             {experienceArray.length>0 ? <h3>Experience</h3> : null }
             {experienceArray.map(exp => {
                 return (
-                    <div style={containerStyle} className="experience-frame">
-                        <ExperienceFrame style={containerStyle} className="experience-frame" workplace = {exp.workplace} position = {exp.position} responsibilities={exp.responsibilities} />
+                    <div className="experience-frame">
+                        <ExperienceFrame  className="experience-frame" workplace = {exp.workplace} position = {exp.position} responsibilities={exp.responsibilities} />
                     </div>
                 )
             })}
-                      
-            <Input type= "text" label="Company name" placeholder="Enter company" value={experience.workplace} onChange={handleWorkplaceChange} />{' '}
-            <Input label="Position title" value = {experience.position} onChange={handlePositionChange} />{' '}
+                     <div className="inputs">
+            <Input name="workplace" type= "text" label="Company name" placeholder="Enter company" value={experience.workplace} onChange={handleWorkplaceChange} />{' '}
+            <Input name="position" label="Position title" value = {experience.position} onChange={handlePositionChange} />{' '}
             <textarea  label="responsibilities" placeholder = "Enter responsibilities of your role" value = {experience.completed} onChange={handleResponsibilitiesChange} />{' '}
-            <button onClick={(addExperience)}>Add Experience</button>
+            <button onClick={(addExperience)}>Add Experience</button></div> 
              {/* <div>Schools: {schools.map(s =>(
                 <p key={s.school}>{s.school} {s.id}</p>
             ))}</div>  */}
-            </>
+            </div>
         )
 
 
@@ -79,13 +76,13 @@ export default function Experience() {
 
 
 
-function Input({label, placeholder, value, onChange, type}){
+function Input({label, placeholder, value, onChange, type}, name){
     return (
-    <>
-        <label>{label}{': '}</label>
+    <div className="details-input-div">
+        <label for = {name}>{label}{': '}</label>
     
-            <input type ={type} placeholder={placeholder} value={value} onChange={onChange}  />
-       </>
+            <input type ={type} name={name} placeholder={placeholder} value={value} onChange={onChange}  />
+       </div>
     )
 }
 function ExperienceFrame({workplace, position, responsibilities}){
@@ -93,13 +90,18 @@ function ExperienceFrame({workplace, position, responsibilities}){
     return (
         <>
           
-            
+            <div className="info-cell">
             <h4>Company Name: </h4>
             <p>{workplace}</p>
+            </div>
+            <div className="info-cell">
             <h5>Job title: </h5>
             <p>{position}</p>
+            </div>
+            <div className="info-cell">
             <h5>Responsibilities: </h5>
             <p>{responsibilities}</p>
+            </div>
         </>
     )
 }
