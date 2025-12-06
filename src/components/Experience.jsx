@@ -46,6 +46,24 @@ export default function Experience() {
 
     }
 
+    function handleDeleteClick(){
+        const parentRow = document.activeElement.parentElement
+        const rowIndex = parentRow.querySelector('.idx')
+        const idx = rowIndex.innerHTML
+        const itemIndex= experienceArray.findIndex(item => item.id===parseInt(idx))
+        const newArrayA = experienceArray.slice(0, itemIndex)
+        const newArrayB = experienceArray.slice(itemIndex+1) 
+        const newArray = [...newArrayA, ...newArrayB]
+        // experienceArray.splice(itemIndex, 0)
+        // experienceArray.map(exp =>
+        //     console.log(exp)
+        // )
+        setExperienceArray(newArray)
+        setExperience(blankExperience)
+ 
+        
+    }
+
   
     
    
@@ -53,13 +71,19 @@ export default function Experience() {
              
             <div>
             {experienceArray.length>0 ? <h3>Experience</h3> : null }
-            {experienceArray.map(exp => {
+
+            
+             <div className="experience-frame">
+                
+            {experienceArray.length>0? (
+                experienceArray.map(exp => {
                 return (
-                    <div className="experience-frame">
-                        <ExperienceFrame  className="experience-frame" workplace = {exp.workplace} position = {exp.position} responsibilities={exp.responsibilities} />
-                    </div>
+                   
+                        <ExperienceFrame key={exp.id} idx={exp.id} workplace = {exp.workplace} position = {exp.position} responsibilities={exp.responsibilities} onClick = {handleDeleteClick} />
+                    
                 )
-            })}
+            }) ) : null}
+            </div>
                      <div className="inputs">
             <Input name="workplace" type= "text" label="Company name" placeholder="Enter company" value={experience.workplace} onChange={handleWorkplaceChange} />{' '}
             <Input name="position" label="Position title" value = {experience.position} onChange={handlePositionChange} />{' '}
@@ -79,17 +103,19 @@ export default function Experience() {
 function Input({label, placeholder, value, onChange, type}, name){
     return (
     <div className="details-input-div">
-        <label for = {name}>{label}{': '}</label>
+        <label htmlFor = {name}>{label}{': '}</label>
     
             <input type ={type} name={name} placeholder={placeholder} value={value} onChange={onChange}  />
        </div>
     )
 }
-function ExperienceFrame({workplace, position, responsibilities}){
+function ExperienceFrame({workplace, position, responsibilities, onClick, idx}){
    
     return (
-        <>
-          
+        <div className="info-row">
+          <div className = "idx">
+            {idx}
+          </div>
             <div className="info-cell">
             <h4>Company Name: </h4>
             <p>{workplace}</p>
@@ -102,7 +128,8 @@ function ExperienceFrame({workplace, position, responsibilities}){
             <h5>Responsibilities: </h5>
             <p>{responsibilities}</p>
             </div>
-        </>
+            <button onClick={onClick}>❌</button>
+        </div>
     )
 }
 

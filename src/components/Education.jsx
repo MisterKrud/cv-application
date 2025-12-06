@@ -44,6 +44,25 @@ export default function Education() {
 
     }
 
+
+     function handleDeleteClick(){
+        const parentRow = document.activeElement.parentElement
+        const rowIndex = parentRow.querySelector('.idx')
+        const idx = rowIndex.innerHTML
+        const itemIndex= schools.findIndex(item => item.id===parseInt(idx))
+        const newArrayA = schools.slice(0, itemIndex)
+        const newArrayB = schools.slice(itemIndex+1) 
+        const newArray = [...newArrayA, ...newArrayB]
+        // experienceArray.splice(itemIndex, 0)
+        // experienceArray.map(exp =>
+        //     console.log(exp)
+        // )
+        setSchools(newArray)
+        setEducation(blankEducation)
+ 
+        
+    }
+
   
     
    
@@ -53,7 +72,7 @@ export default function Education() {
             {schools.map(sch => {
                 return (
                     <div className="education-frame">
-                        <EducationInfoFrame  school = {sch.school} course = {sch.course} completed={sch.completed} />
+                        <EducationInfoFrame  key={sch.id} idx={sch.id} school = {sch.school} course = {sch.course} completed={sch.completed} onClick={handleDeleteClick}/>
                     </div>
                 )
             })}
@@ -82,11 +101,14 @@ function Input({label, placeholder, value, onChange, type}){
        </div>
     )
 }
-function EducationInfoFrame({school, course, completed}){
+function EducationInfoFrame({school, course, completed, onClick, idx}){
    
     return (
-        <>
-          
+        
+          <div className="info-row">
+          <div className = "idx">
+            {idx}
+          </div>
             <div className="info-cell">
             <h4>School: </h4>
             <p>{school}</p>
@@ -99,7 +121,8 @@ function EducationInfoFrame({school, course, completed}){
             <h5>Date completed: </h5>
             <p>{completed}</p>
             </div>
-        </>
+            <button onClick={onClick}>❌</button>
+        </div>
     )
 }
 
