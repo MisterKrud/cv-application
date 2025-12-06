@@ -8,8 +8,9 @@
 }
 
 input:hover, textarea:hover{
-    background-color:lightpink;
+    background-color:rgb(214, 233, 248);
 }
+
 
 .input-div{
     display: block;

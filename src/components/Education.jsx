@@ -95,9 +95,10 @@ export default function Education() {
 function Input({label, placeholder, value, onChange, type}){
     return (
     <div className="details-input-div">
-        <label>{label}{': '}</label>
+        <label htmlFor={label}>{label}{': '}
     
             <input type ={type} placeholder={placeholder} value={value} onChange={onChange}  />
+            </label>
        </div>
     )
 }

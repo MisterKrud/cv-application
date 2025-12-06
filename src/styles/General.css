@@ -29,7 +29,7 @@ label{
     display: flex;
     justify-content: space-between;
     padding: .4rem;
-    align-items: center;
+    align-items: baseline;
 }
 
 h2, h3{
@@ -53,4 +53,33 @@ p{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.general-input{
+    border: none;
+    padding: 1rem .1rem 1rem .5rem;
+    font-size: 1.2rem;
+    outline: none;
+    width: 15rem;
+    background-color: white;
+    background: none;
+    margin-left: 1rem;
+}
+
+.general-input:invalid{
+    background-color: rgb(235, 235, 235);
+}
+
+.general-input:webkit-autofill,
+.general-input:webkit-autofill:hover,
+    .general-input:webkit-autofill:focus{
+    background-color: white !important;
+}
+
+
+
+.general-details-label{
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
 }
