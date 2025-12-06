@@ -69,13 +69,17 @@ export default function Education() {
         return(
             <div>
             {schools.length>0 ? <h3>Education</h3> : null }
-            {schools.map(sch => {
+            
+            <div className="education-frame">
+            {schools.length >0? (
+                schools.map(sch => {
                 return (
-                    <div className="education-frame">
+                    
                         <EducationInfoFrame  key={sch.id} idx={sch.id} school = {sch.school} course = {sch.course} completed={sch.completed} onClick={handleDeleteClick}/>
-                    </div>
+                    
                 )
-            })}
+            })) : null}
+            </div>
              <div className = "inputs">        
             <Input type= "text" label="School" placeholder="Enter school name" value={education.school} onChange={handleSchoolNameChange} />{' '}
             <Input label="Course name" placeholder = "Enter name of course studied" value = {education.course} onChange={handleCourseChange} />{' '}
@@ -97,7 +101,7 @@ function Input({label, placeholder, value, onChange, type}){
     <div className="details-input-div">
         <label htmlFor={label}>{label}{': '}
     
-            <input type ={type} placeholder={placeholder} value={value} onChange={onChange}  />
+            <input type ={type} name={label} placeholder={placeholder} value={value} onChange={onChange}  />
             </label>
        </div>
     )
@@ -122,7 +126,7 @@ function EducationInfoFrame({school, course, completed, onClick, idx}){
             <h5>Date completed: </h5>
             <p>{completed}</p>
             </div>
-            <button onClick={onClick}>❌</button>
+            <button className="delete-button" onClick={onClick}>❌</button>
         </div>
     )
 }

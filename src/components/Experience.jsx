@@ -100,13 +100,15 @@ export default function Experience() {
 
 
 
-function Input({label, placeholder, value, onChange, type}, name){
+function Input({label, placeholder, value, onChange, type}){
     return (
     <div className="details-input-div">
-        <label htmlFor = {name}>{label}{': '}</label>
+        <label htmlFor = {name}>{label}{': '}
     
-            <input type ={type} name={name} placeholder={placeholder} value={value} onChange={onChange}  />
+            <input type ={type} name={label} placeholder={placeholder} value={value} onChange={onChange}  />
+            </label>
        </div>
+       
     )
 }
 function ExperienceFrame({workplace, position, responsibilities, onClick, idx}){
@@ -128,7 +130,7 @@ function ExperienceFrame({workplace, position, responsibilities, onClick, idx}){
             <h5>Responsibilities: </h5>
             <p>{responsibilities}</p>
             </div>
-            <button onClick={onClick}>❌</button>
+            <button className="delete-button" onClick={onClick}>❌</button>
         </div>
     )
 }

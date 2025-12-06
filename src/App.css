@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  border: 1px gray solid;
 }
 
 
@@ -10,6 +11,11 @@ button{
   background-color: cornflowerblue;
   box-shadow: 2px 2px 2px;
 
+}
+
+button:active{
+  transform:translate(1px, 1px);
+  outline: none;
 }
 
 
@@ -24,17 +30,78 @@ button{
 .info-row {
   width: 100%;
     display: flex;
+    line-height: 0;
+    
+    height: 2rem;
+    
 
     /* align-items: center; */
     justify-content: space-between;
-    background-color: lightskyblue;
+    /* background-color: lightskyblue; */
 }
+
 
 .info-cell{
   display: flex;
-  background-color: lightskyblue;
+  /* background-color: lightskyblue; */
   width: 33%;
   justify-items: flex-start;
   padding-left: 1rem;
+  
+  
+}
+
+.info-cell>h4, .info-cell>h5, .info-cell>p{
+  padding: 0;
+  line-height: 0;
+  align-self: center;
+}
+
+.delete-button{
+ border: none;
+  box-shadow: 1px 1px 4px gray;
+  padding:.01rem;
+  height: 1.6rem;
+  background-color: none !important;
+}
+
+.delete-button:nth-child(odd)>{
+
+ 
+
+}
+
+.delete-button:nth-child(even)>{
+
+  color: white;
+  border: none;
+  box-shadow: 1px 1px 4px gray;
+  padding:.01rem;
+  height: 1.6rem;;
+
+}
+
+.experience-frame, .education-frame {
+    display: flex;
+    flex-direction: column;
+   
+    /* align-items: center; */
+    justify-content: space-evenly;
+  
+}
+
+.experience-frame .info-row:nth-child(odd){
+  background-color: skyblue;
+}
+ .experience-frame .info-row:nth-child(even){
+  background-color: rgb(212, 230, 238);
+  
+}
+
+.education-frame .info-row:nth-child(odd){
+  background-color: rgb(255, 200, 179);
+}
+ .education-frame .info-row:nth-child(even){
+  background-color: rgb(250, 231, 224);
   
 }

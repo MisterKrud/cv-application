@@ -3,7 +3,7 @@
 
 .education-frame {
     display: flex;
-    background-color: lightskyblue;
+    /* background-color: lightskyblue; */
     justify-content: space-between;
 }
  input{
