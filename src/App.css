@@ -6,6 +6,13 @@
   border: 1px gray solid;
 }
 
+.info-cell>p{
+  background-color: red;
+  width: .5rem;
+  padding: .5rem;
+  color: green;
+}
+
 
 button{
   background-color: cornflowerblue;
@@ -65,11 +72,7 @@ button:active{
   background-color: none !important;
 }
 
-.delete-button:nth-child(odd)>{
 
- 
-
-}
 
 .delete-button:nth-child(even)>{
 
@@ -90,18 +93,32 @@ button:active{
   
 }
 
-.experience-frame .info-row:nth-child(odd){
+.experience-frame .inputs:nth-child(odd){
   background-color: skyblue;
 }
- .experience-frame .info-row:nth-child(even){
+ .experience-frame .inputs:nth-child(even){
   background-color: rgb(212, 230, 238);
   
 }
 
-.education-frame .info-row:nth-child(odd){
-  background-color: rgb(255, 200, 179);
+.education-frame .inputs:nth-child(odd){
+  background-color: #9ff59f
 }
- .education-frame .info-row:nth-child(even){
-  background-color: rgb(250, 231, 224);
+ .education-frame .inputs:nth-child(even){
+  background-color: #dbfcdb
   
+}
+
+p{
+  background-color: red;
+  width: .5rem;
+}
+
+.hidden{
+  visibility: hidden;
+  display: none;
+}
+
+.finsihed-inputs{
+  display: flex;
 }
