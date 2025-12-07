@@ -104,7 +104,7 @@ export default function Experience() {
                     value={exp.to}
                     onChange={(e) => handleEdit(e, exp.id, "to")}
                   />{" "}
-                  <button onClick={() => handleDeleteClick(exp.id)}>x</button>
+                  <button className = "delete-button" onClick={() => handleDeleteClick(exp.id)}>❌</button>
                 </div>
               );
             })

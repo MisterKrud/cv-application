@@ -76,7 +76,7 @@ export default function Education() {
           value={sch.completed}
           onChange={(e)=>handleEdit(e, sch.id, "completed")}
         />{" "}
-        <button onClick={()=>handleDeleteClick(sch.id)}>x</button>
+        <button className="delete-button" onClick={()=>handleDeleteClick(sch.id)}>❌</button>
         
       </div>
               );
