@@ -28,20 +28,6 @@ export default function Experience() {
     setExperience(newExperience);
   }
 
-//   function handlePositionChange(e) {
-//     const newExperience = { ...experience, position: e.target.value };
-//     setExperience(newExperience);
-//   }
-
-//   function handleResponsibilitiesChange(e) {
-//     const newExperience = { ...experience, responsibilities: e.target.value };
-//     setExperience(newExperience);
-//   }
-
-//   function handleStartDateChange(e) {
-//     const newExperience = { ...experience, from: e.target.value };
-//     setExperience(newExperience);
-//   }
 
 
 
@@ -61,15 +47,7 @@ export default function Experience() {
     setExperience(blankExperience);
   }
 
-//   function handleWorkplaceEdit(e, id) {
-//     const newArray = [...experienceArray];
-//     const itemIndex = newArray.findIndex((item) => item.id === id);
-//     const itemToEdit = newArray.find((exp, index) => index === itemIndex);
-//     console.log(itemToEdit);
-//     const newItem = { ...itemToEdit, workplace: e.target.value };
-//     newArray.splice(itemIndex, 1, newItem);
-//     setExperienceArray(newArray);
-//   }
+
 
   function handleEdit(e, id, param) {
     const newArray = [...experienceArray];
@@ -81,45 +59,8 @@ export default function Experience() {
     setExperienceArray(newArray);
   }
 
-//   function handlePositionEdit(e, id) {
-//     const newArray = [...experienceArray];
-//     const itemIndex = newArray.findIndex((item) => item.id === id);
-//     const itemToEdit = newArray.find((exp, index) => index === itemIndex);
-//     console.log(itemToEdit);
-//     const newItem = { ...itemToEdit, position: e.target.value };
-//     newArray.splice(itemIndex, 1, newItem);
-//     setExperienceArray(newArray);
-//   }
 
-//   function handleResponsibilitiesEdit(e, id) {
-//     const newArray = [...experienceArray];
-//     const itemIndex = newArray.findIndex((item) => item.id === id);
-//     const itemToEdit = newArray.find((exp, index) => index === itemIndex);
-//     console.log(itemToEdit);
-//     const newItem = { ...itemToEdit, responsibilities: e.target.value };
-//     newArray.splice(itemIndex, 1, newItem);
-//     setExperienceArray(newArray);
-//   }
 
-//   function handleStartDateEdit(e, id) {
-//     const newArray = [...experienceArray];
-//     const itemIndex = newArray.findIndex((item) => item.id === id);
-//     const itemToEdit = newArray.find((exp, index) => index === itemIndex);
-//     console.log(itemToEdit);
-//     const newItem = { ...itemToEdit, from: e.target.value };
-//     newArray.splice(itemIndex, 1, newItem);
-//     setExperienceArray(newArray);
-//   }
-
-//   function handleEndDateEdit(e, id) {
-//     const newArray = [...experienceArray];
-//     const itemIndex = newArray.findIndex((item) => item.id === id);
-//     const itemToEdit = newArray.find((exp, index) => index === itemIndex);
-//     console.log(itemToEdit);
-//     const newItem = { ...itemToEdit, to: e.target.value };
-//     newArray.splice(itemIndex, 1, newItem);
-//     setExperienceArray(newArray);
-//   }
 
   return (
     <div>
