@@ -10,8 +10,8 @@ import "../styles/Education.css";
 export default function Education() {
   const blankEducation = { school: "", course: "", completed: "" };
   const [education, setEducation] = useState(blankEducation);
-
   const [schools, setSchools] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(0)
 
   function handleChange(e, param) {
     const newEducation = { ...education, [param]: e.target.value };
@@ -48,6 +48,7 @@ export default function Education() {
   }
 
   return (
+    <Panel className="panel" isActive={activeIndex===0}>
     <div>
       {schools.length > 0 ? <h3>Education</h3> : null}
 
@@ -108,6 +109,7 @@ export default function Education() {
       
       </div>
     </div>
+    </Panel>
   );
 }
 
@@ -129,6 +131,18 @@ function Input({ label, placeholder, value, onChange, type }) {
     </div>
   );
 }
+
+function Panel({children, isActive}){
+    return(
+        <div className = "panel">
+            {isActive? (
+            <div>{children}</div>
+            ) :null}
+        </div>
+    )
+}
+
+
 function EducationInfoFrame({ school, course, completed, onClick, idx }) {
   return (
     <div className="info-row">
