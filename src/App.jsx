@@ -5,12 +5,16 @@ import General from './components/General.jsx'
 import Education from './components/Education.jsx'
 import Experience from './components/Experience.jsx'
 
+
+
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
       <div>
+      
         <General />
         <br />
         <Education />

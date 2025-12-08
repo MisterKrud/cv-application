@@ -47,7 +47,13 @@ export default function Education() {
     setSchools(newArray);
   }
 
+  function handleSubmitEditSchools(){
+    activeIndex ===1 ? setActiveIndex(0) : setActiveIndex(1)
+    console.log(activeIndex)
+  }
+
   return (
+    <>
     <Panel className="panel" isActive={activeIndex===0}>
     <div>
       {schools.length > 0 ? <h3>Education</h3> : null}
@@ -106,10 +112,33 @@ export default function Education() {
           onChange={(e)=>handleChange(e, "completed")}
         />{" "}
         <button onClick={addSchool}>Add School</button>
+        <button onClick={handleSubmitEditSchools}>Submit</button>
       
       </div>
     </div>
     </Panel>
+    <Panel className="panel" isActive={activeIndex===1}>
+           <div>
+            <div className="cv-header">
+            <h3>Education</h3></div>
+            {schools.map((sch, index)=> {
+              return (
+              <div className="info-row" key ={sch.id}>
+                
+              <div className = "info-cell"><h4>{sch.school}:</h4></div>
+              <div className = "info-cell"><p>{sch.course}</p></div>
+              <div className = "info-cell"><h5>Completed:{' '}</h5><p>{' '}{sch.completed}</p></div>
+            
+              </div>
+              )
+            })
+            }
+              <button onClick={handleSubmitEditSchools}>Edit</button>
+           </div>
+
+
+    </Panel>
+    </>
   );
 }
 

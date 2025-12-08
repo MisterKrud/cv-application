@@ -6,12 +6,7 @@
   border: 1px gray solid;
 }
 
-.info-cell>p{
-  background-color: red;
-  width: .5rem;
-  padding: .5rem;
-  color: green;
-}
+
 
 
 button{
@@ -37,15 +32,15 @@ button:active{
 }
 
 .info-row {
-  width: 100%;
+  
     display: flex;
-    line-height: 0;
+    /* line-height: 0; */
     
     height: 2rem;
     
 
     /* align-items: center; */
-    justify-content: space-between;
+    justify-content: flex-start;
     /* background-color: lightskyblue; */
 }
 
@@ -53,18 +48,24 @@ button:active{
 .info-cell{
   display: flex;
   /* background-color: lightskyblue; */
-  width: 33%;
+  /* width: 33%; */
   justify-items: flex-start;
   padding-left: 1rem;
   
-  
+  border: none;
+  align-items: baseline;
+
 }
 
 .info-cell>h4, .info-cell>h5, .info-cell>p{
-  padding: 0;
-  line-height: 0;
+  
+  /* line-height: 0; */
   align-self: center;
+
+  
 }
+
+
 
 .delete-button{
  border: none;
@@ -111,10 +112,7 @@ button:active{
   
 }
 
-p{
-  background-color: red;
-  width: .5rem;
-}
+
 
 .hidden{
   visibility: hidden;
@@ -123,4 +121,11 @@ p{
 
 .finsihed-inputs{
   display: flex;
+}
+
+
+.cv-header{
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1rem;
 }

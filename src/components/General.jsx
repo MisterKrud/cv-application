@@ -7,9 +7,11 @@ import { useState } from "react";
 import '../styles/General.css';
 
 export default function General(){
+
+    //refactor this into an object for function simplification
     const [email, setEmail] = useState('')
     const [name, setName] = useState('')
-    const [phone, setPhone] = useState(' ')
+    const [phone, setPhone] = useState('')
     const [activeIndex, setActiveIndex] = useState(0)
 
     const userDetails = {name: name, email: email, phone: phone}
