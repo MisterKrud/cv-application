@@ -32,39 +32,45 @@ export default function General(){
     
     return (
        <>
-       <GeneralDetails name={name} email={email} phone={phone} isActive={activeIndex===1} onShow={()=>setActiveIndex(1)}/>
-        <div className = "general-information">
+       <Panel isActive={activeIndex===1} onShow={()=>setActiveIndex(1)}>
+       <GeneralDetails name={name} email={email} phone={phone} />
+         </Panel>
+
+         <Panel isActive={activeIndex===0} onShow={()=>setActiveIndex(0)}>
+        {/* <div className = "general-information"> */}
+           
        
        <div className="inputs">
-            <Input label="Name" value={name} name={name} onChange={handleNameChange} isActive={activeIndex===0} onShow={()=>setActiveIndex(0)}/>{' '}
-            <Input type = "email" label="Email" name={name} value={email} onChange={handleEmailChange} isActive={activeIndex===0} onShow={()=>setActiveIndex(0)}/>{' '}
-            <Input type = "phone" label = "Phone" name={name} value = {phone} onChange={handlePhoneChange} isActive={activeIndex===0} onShow={()=>setActiveIndex(0)} />{' '}
+            <Input label="Name" value={name} name={name} onChange={handleNameChange} />{' '}
+            <Input type = "email" label="Email" name={name} value={email} onChange={handleEmailChange} />{' '}
+            <Input type = "phone" label = "Phone" name={name} value = {phone} onChange={handlePhoneChange} />{' '}
             <button onClick={submitAll}>Submit</button>
             </div>
           
-        </div>
+        {/* </div> */}
+         </Panel>
        </>
     )
 }
 
-function Input({type, value, onChange, label, placeholder, isActive}){
+function Input({type, value, onChange, label, placeholder}){
 
     return (
         
         <div className="details-input-div">
-            {isActive ? (
+           
         <label className="general-details-label">{label}{': '} 
     <input className= "general-input" type = {type} label={label} value = {value} placeholder = {placeholder} onChange={onChange} name={label} required/>
    </label>
-   ) :( null)}
+  
     </div> 
         )
 }
 
-function GeneralDetails({name, email, phone, isActive, onShow}){
+function GeneralDetails({name, email, phone}){
     return(
         <>
-          {isActive ? (
+          
         <div className="general-details">
           
             <h3>{name}</h3>
@@ -72,11 +78,21 @@ function GeneralDetails({name, email, phone, isActive, onShow}){
             <h4>{phone}</h4>
             
         </div>
-        ) : (null)}
+      
         </>
     )
 }
 
+
+function Panel({children, isActive}){
+    return(
+        <div className = "panel">
+            {isActive? (
+            <div>{children}</div>
+            ) :null}
+        </div>
+    )
+}
 function SubmitButton(onClick){
 
     return(
