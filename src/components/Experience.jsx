@@ -19,8 +19,8 @@ export default function Experience() {
   };
 
   const [experience, setExperience] = useState(blankExperience);
-
   const [experienceArray, setExperienceArray] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(0)
 
 
   function handleChange(e, param) {
@@ -63,9 +63,11 @@ export default function Experience() {
 
 
   return (
+    <Panel isActive={activeIndex===0}>
     <div>
       {experienceArray.length > 0 ? <h3>Experience</h3> : null}
 
+    
       <div className="experience-frame">
         {experienceArray.length > 0
           ? experienceArray.map((exp) => {
@@ -110,6 +112,7 @@ export default function Experience() {
             })
           : null}
       </div>
+      
       <div>
         <div className="inputs">
           <Input
@@ -149,8 +152,10 @@ export default function Experience() {
           <button onClick={addExperience}>Add Experience</button>
         </div>
       </div>
+      
       <div className="inputs"></div>
     </div>
+    </Panel>
   );
 }
 
@@ -174,6 +179,17 @@ function Input({ label, placeholder, value, onChange, objKey, type, idx }) {
       </div>
     </>
   );
+}
+
+
+function Panel({children, isActive}){
+    return(
+        <div className = "panel">
+            {isActive? (
+            <div>{children}</div>
+            ) :null}
+        </div>
+    )
 }
 
 function ExperienceFrame({
