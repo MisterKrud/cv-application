@@ -9,7 +9,7 @@
 import { useState } from "react";
 import "../styles/Experience.css";
 
-export default function Experience() {
+export default function Experience({activeButton}) {
   const blankExperience = {
     workplace: "",
     position: "",
@@ -165,14 +165,14 @@ export default function Experience() {
      <Panel className="panel" isActive={activeIndex===1}>
            <div>
             <div className="cv-header">
-            <h3>Experience</h3></div>
+            <h3 className="cv-subheader">Experience</h3></div>
             {experienceArray.map((exp, index)=> {
               return (
               <div className="info-row" key ={exp.id}>
                 
-              <div className = "info-cell"><h4>{exp.workplace}:</h4></div>
-              <div className = "info-cell"><p>{exp.position}</p></div>
-              <div className = "info-cell"><p>{exp.responsibilities}</p></div>
+              <div className = "info-cell"><h4>{exp.workplace}</h4></div>
+              <div className = "info-cell"><p className="position">{exp.position}</p></div>
+              <div className = "info-cell"><p className="responsibilities">{exp.responsibilities}</p></div>
               <div className = "info-cell"><h5>From:{' '}</h5><p>{' '}{exp.from}</p></div>
               <div className = "info-cell"><h5>To:{' '}</h5><p>{' '}{exp.to}</p></div>
             
@@ -180,7 +180,9 @@ export default function Experience() {
               )
             })
             }
+            <SubmitButtonDiv isActive = {activeButton}>
               <button onClick={handleSubmitEditExperience}>Edit</button>
+              </SubmitButtonDiv>
            </div>
 
 
@@ -253,4 +255,14 @@ function ExperienceFrame({
       </button>
     </div>
   );
+}
+
+function SubmitButtonDiv({isActive, children}){
+  return(
+    <>
+    {isActive ? (
+    <div>{children}</div>
+    ) :(null)}
+      </>
+  )
 }

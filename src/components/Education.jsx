@@ -7,7 +7,7 @@
 import { useState } from "react";
 import "../styles/Education.css";
 
-export default function Education() {
+export default function Education({activeButton}) {
   const blankEducation = { school: "", course: "", completed: "" };
   const [education, setEducation] = useState(blankEducation);
   const [schools, setSchools] = useState([]);
@@ -120,20 +120,22 @@ export default function Education() {
     <Panel className="panel" isActive={activeIndex===1}>
            <div>
             <div className="cv-header">
-            <h3>Education</h3></div>
+            <h3 className="cv-subheader">Education</h3></div>
             {schools.map((sch, index)=> {
               return (
               <div className="info-row" key ={sch.id}>
                 
-              <div className = "info-cell"><h4>{sch.school}:</h4></div>
+              <div className = "info-cell"><h4>{sch.school}</h4></div>
               <div className = "info-cell"><p>{sch.course}</p></div>
-              <div className = "info-cell"><h5>Completed:{' '}</h5><p>{' '}{sch.completed}</p></div>
+              <div className = "info-cell"><h5>Completed:{' '}</h5><p className = "date">{' '}{sch.completed}</p></div>
             
               </div>
               )
             })
             }
+            <SubmitButtonDiv isActive={activeButton}>
               <button onClick={handleSubmitEditSchools}>Edit</button>
+              </SubmitButtonDiv>
            </div>
 
 
@@ -193,4 +195,14 @@ function EducationInfoFrame({ school, course, completed, onClick, idx }) {
       </button>
     </div>
   );
+}
+
+function SubmitButtonDiv({isActive, children}){
+  return(
+    <>
+    {isActive ? (
+    <div>{children}</div>
+    ) :(null)}
+      </>
+  )
 }

@@ -20,12 +20,47 @@ button:active{
   outline: none;
 }
 
+.document-header>*{
+  text-align: left;
+  padding: 0;
+  margin-bottom: .2rem;
+}
+
+.document-header>p{
+  font-size:1.2rem;
+}
+
+.contact-details{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0;
+  
+  
+}
 
 
+
+.general-details{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.general-details>*{
+  padding: 0 1rem;
+}
 
 .card {
   padding: 2em;
 }
+
+
+.cv-subheader{
+  color:royalblue;
+}
+
 
 .read-the-docs {
   color: #888;
@@ -33,23 +68,25 @@ button:active{
 
 .info-row {
   
-    display: flex;
+   display: flex;
+   flex-direction: column;
+   margin: .5rem 0 .5rem 0;
     /* line-height: 0; */
     
-    height: 2rem;
+    /* height: 2rem; */
     
 
     /* align-items: center; */
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     /* background-color: lightskyblue; */
 }
 
 
 .info-cell{
   display: flex;
-  /* background-color: lightskyblue; */
-  /* width: 33%; */
-  justify-items: flex-start;
+ 
+ 
+  padding: 0;
   padding-left: 1rem;
   
   border: none;
@@ -57,12 +94,22 @@ button:active{
 
 }
 
+.info-cell>*{
+  padding: 0;
+  margin: 0 .5rem 0 0;
+}
+
+
 .info-cell>h4, .info-cell>h5, .info-cell>p{
   
   /* line-height: 0; */
   align-self: center;
 
   
+}
+
+.info-cell>p{
+  font-style: italic;
 }
 
 
@@ -128,4 +175,11 @@ button:active{
   display: flex;
   justify-content: flex-start;
   padding-left: 1rem;
+}
+
+.back-edit, .final-edit{
+  margin:0;
+  padding: 0;
+  background-color: none;
+  
 }
