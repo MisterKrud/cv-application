@@ -1,124 +1,36 @@
-.general-information{
-    background-color:lightyellow;
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    
-   
-}
-
-.user-details{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 50px;
-}
-.name-div{
-    display: flex;
-    align-items: baseline;
-   
-    margin: 0 auto;
-    width: 100%;
-    padding: 0 1rem;
-}
-
-label{
-    padding: .2rem .4rem;
-}
-
-.details-input-div{
-    display: flex;
-    justify-content: space-between;
-    padding: .4rem;
-    align-items: baseline;
-}
-
-h2, h3{
-    margin: 0;
-}
-
-
-.document-header>*{
-  text-align: left;
-  padding: 0;
-  margin-bottom: .2rem;
-}
-
-.document-header>p{
-  font-size:1.2rem;
-}
-
-.contact-details{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
-  
-}
-
-.email{
-    margin-bottom: 0;
-}
-
-.phone{
-    margin-top: 0;
-}
-
-
-.general-details{
-  display: flex;
-  justify-content: space-between;
-
-}
-
-.general-details>*{
-  padding: 0 1rem;
-}
-
-.user-name{
-    font-size: 1.6rem;
-}
-
-/* p{
-    display: flex;
-    padding: 0 1rem;
-    align-items: center;
-    
-    margin: 0;
-    
-} */
-
-.inputs{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.general-input{
-    border: none;
-    padding: 1rem .1rem 1rem .5rem;
-    font-size: 1.2rem;
-    outline: none;
-    width: 15rem;
-    background-color: white;
-    background: none;
-    margin-left: 1rem;
-}
-
-.general-input:invalid{
-    background-color: rgb(255, 255, 255);
-}
-
-.general-input:webkit-autofill,
-.general-input:webkit-autofill:hover,
-    .general-input:webkit-autofill:focus{
-    background-color: white !important;
-}
 
 
 
-.general-details-label{
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: flex;
-    align-items: baseline;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

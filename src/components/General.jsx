@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/General.css";
+// import "../styles/General.css";
 
 
 export default function General({activeButton}) {
@@ -38,7 +38,7 @@ export default function General({activeButton}) {
       </Panel>
 
       <Panel isActive={activeIndex === 0} onShow={() => setActiveIndex(0)}>
-        <div className="inputs">
+        <div className="general-data inputs">
           <Input
             label="Name"
             value={name}

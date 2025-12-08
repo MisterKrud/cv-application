@@ -3,8 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  border: 1px gray solid;
-}
+
+} 
 
 
 
@@ -12,6 +12,7 @@
 button{
   background-color: cornflowerblue;
   box-shadow: 2px 2px 2px;
+  margin: .2rem 0;
 
 }
 
@@ -19,6 +20,52 @@ button:active{
   transform:translate(1px, 1px);
   outline: none;
 }
+
+.button-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.submit-button{
+  background-color:rgb(237, 162, 100);
+}
+
+.submit-button:hover{
+  background-color: cornflowerblue;
+  color: white;
+}
+
+ input{
+    padding: 5px;
+    border-radius: 5px;
+     border: none;
+    box-shadow: 1px 1px 1px gray;
+    height: 1.2rem;
+ }
+
+ input:hover, textarea:hover{
+    background-color:rgb(214, 233, 248);
+}
+
+.details-input-div{
+    display: flex;
+    justify-content: space-between;
+    padding: .2rem;
+    align-items: baseline;
+    margin-top: .3rem;
+}
+
+h2, h3{
+    margin: 0;
+   
+    
+}
+
+label{
+    font-weight: bold;
+    padding: .2rem .4rem;
+}
+
 
 .document-header>*{
   text-align: left;
@@ -35,11 +82,16 @@ button:active{
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
-  padding: 0;
+ 
   
   
 }
 
+.user-details{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
 
 
 .general-details{
@@ -52,6 +104,18 @@ button:active{
   padding: 0 1rem;
 }
 
+.user-name{
+    font-size: 1.6rem;
+}
+
+.email{
+    margin-bottom: 0;
+}
+
+.phone{
+    margin-top: 0;
+}
+
 .card {
   padding: 2em;
 }
@@ -59,6 +123,7 @@ button:active{
 
 .cv-subheader{
   color:royalblue;
+ 
 }
 
 
@@ -112,27 +177,97 @@ button:active{
   font-style: italic;
 }
 
+.inputs{
+ 
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.button-container{
+display:flex;
+flex-direction: column;
+}
+
+
+.data{
+  background-color:aliceblue;
+  padding: 1.5rem .5rem;
+  margin-top: 1rem;
+  box-shadow: 2px 2px 2px gray;
+  border-radius: 5px;;
+}
+
+@media (min-width: 1190px){
+  .inputs{
+    display:flex;
+  }
+
+}
+
+.general-input{
+    border: none;
+    padding: 1rem .1rem 1rem .5rem;
+    font-size: 1.2rem;
+    outline: none;
+    width: 15rem;
+    background-color: white !important;
+    background: none;
+    margin-left: 1rem;
+}
+
+.general-input:invalid{
+    background-color: rgb(248, 205, 205);
+}
+
+.general-details-label{
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: baseline;
+}
+
+.general-data{
+  background-color:rgb(237, 162, 100);
+  padding: 1rem;
+  box-shadow: 2px 2px 2px gray;
+  border-radius: .5rem;
+}
+
+
+.general-input:webkit-autofill,
+.general-input:webkit-autofill:hover,
+    .general-input:webkit-autofill:focus{
+    background-color: white !important;
+}
+
 
 
 .delete-button{
  border: none;
-  box-shadow: 1px 1px 4px gray;
+
+   box-shadow: none;
   padding:.01rem;
   height: 1.6rem;
-  background-color: none !important;
+  background-color: rgb(255, 255, 255, 0.01) ;
+
+  
 }
 
 
+.delete-button:hover{
+  background-color: white;
+    box-shadow: 1px 1px 4px gray;
+}
 
-.delete-button:nth-child(even)>{
-
-  color: white;
-  border: none;
-  box-shadow: 1px 1px 4px gray;
-  padding:.01rem;
-  height: 1.6rem;;
+.delete-button-div{
+  /* display: flex; */
+  /* align-items: flex-start; */
+  /* justify-content: flex-start; */
+  margin:.2rem 1rem;
 
 }
+
 
 .experience-frame, .education-frame {
     display: flex;
@@ -177,9 +312,49 @@ button:active{
   padding-left: 1rem;
 }
 
+.edit-section-header>h3{
+  background-color:lightsalmon
+}
+
+
+.submit-button-container{
+  background-color: rgb(248, 204, 168);
+  padding: 1rem;
+  border-radius: .5rem;
+  box-shadow: 2px 2px 2px;
+}
+
+.submit-print{
+   background-color:green;
+   color: white;
+   box-shadow: 2px 2px 2px gray;
+}
+
 .back-edit, .final-edit{
   margin:0;
   padding: 0;
   background-color: none;
-  
+}
+
+.final-edit{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.input-div{
+    display: block;
+}
+
+.user-details{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 0;
+}
+
+.idx{
+    width: 0px;
+    visibility: hidden;
 }

@@ -7,7 +7,7 @@
 //submit - hide inputs, add p element with value, add edit & delete button
 
 import { useState } from "react";
-import "../styles/Experience.css";
+
 
 export default function Experience({activeButton}) {
   const blankExperience = {
@@ -70,7 +70,7 @@ export default function Experience({activeButton}) {
     <>
     <Panel isActive={activeIndex===0}>
     <div>
-      {experienceArray.length > 0 ? <h3>Experience</h3> : null}
+      {experienceArray.length > 0 ? <div className="edit-section-header"><h3>Experience</h3></div> : null}
 
     
       <div className="experience-frame">
@@ -111,7 +111,9 @@ export default function Experience({activeButton}) {
                     value={exp.to}
                     onChange={(e) => handleEdit(e, exp.id, "to")}
                   />{" "}
+                  <div className="delete-button-div">
                   <button className = "delete-button" onClick={() => handleDeleteClick(exp.id)}>❌</button>
+                </div>
                 </div>
               );
             })
@@ -119,7 +121,7 @@ export default function Experience({activeButton}) {
       </div>
       
       <div>
-        <div className="inputs">
+        <div className="inputs data">
           <Input
             name="workplace"
             type="text"
@@ -154,8 +156,10 @@ export default function Experience({activeButton}) {
             value={experience.to}
             onChange={(e)=>handleChange(e, "to")}
           />
+          <div className="button-container">
           <button onClick={addExperience}>Add Experience</button>
-           <button onClick={handleSubmitEditExperience}>Submit</button>
+           <button className="submit-button" onClick={handleSubmitEditExperience}>Submit</button>
+           </div>
         </div>
       </div>
       

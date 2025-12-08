@@ -5,7 +5,7 @@
 //add edit school?
 
 import { useState } from "react";
-import "../styles/Education.css";
+
 
 export default function Education({activeButton}) {
   const blankEducation = { school: "", course: "", completed: "" };
@@ -56,7 +56,7 @@ export default function Education({activeButton}) {
     <>
     <Panel className="panel" isActive={activeIndex===0}>
     <div>
-      {schools.length > 0 ? <h3>Education</h3> : null}
+      {schools.length > 0 ? <div className="edit-section-header"><h3>Education</h3></div> : null}
 
       <div className="education-frame">
         {schools.length > 0
@@ -83,14 +83,17 @@ export default function Education({activeButton}) {
           value={sch.completed}
           onChange={(e)=>handleEdit(e, sch.id, "completed")}
         />{" "}
+        <div className="delete-button-div">
         <button className="delete-button" onClick={()=>handleDeleteClick(sch.id)}>❌</button>
-        
+       </div>
       </div>
               );
             })
           : null}
       </div>
-      <div className="inputs">
+      
+      <div className="inputs data">
+        
         <Input
           type="text"
           label="School"
@@ -111,11 +114,15 @@ export default function Education({activeButton}) {
           value={education.completed}
           onChange={(e)=>handleChange(e, "completed")}
         />{" "}
+       
+       
+        <div className = "button-container">
         <button onClick={addSchool}>Add School</button>
-        <button onClick={handleSubmitEditSchools}>Submit</button>
-      
+        <button className= "submit-button" onClick={handleSubmitEditSchools}>Submit</button>
+      </div>
       </div>
     </div>
+   
     </Panel>
     <Panel className="panel" isActive={activeIndex===1}>
            <div>

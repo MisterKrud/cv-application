@@ -27,10 +27,14 @@ function App() {
         <Experience activeButton={activeButtonIndex===1}/>
        <br />
        <SubmitButtonDiv isActive={activeButtonIndex===1}>
-       <button onClick={handleSubmitButton}>Submit & Print</button>
+        <div className="submit-button-container">
+       <button className="submit-print" onClick={handleSubmitButton}>Submit & Print</button>
+       </div>
        </SubmitButtonDiv>
-       <SubmitButtonDiv className="final-edit" isActive={activeButtonIndex===0}>
+       <SubmitButtonDiv isActive={activeButtonIndex===0}>
+        <div className='final-edit'>
        <button className="back-edit" onClick={handleSubmitButton}>↪</button>
+       </div> 
        </SubmitButtonDiv>
       </div>
       
