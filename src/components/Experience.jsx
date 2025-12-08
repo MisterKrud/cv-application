@@ -59,10 +59,15 @@ export default function Experience() {
     setExperienceArray(newArray);
   }
 
+  function handleSubmitEditExperience(){
+    activeIndex === 1 ? setActiveIndex(0) : setActiveIndex(1)
+  }
+
 
 
 
   return (
+    <>
     <Panel isActive={activeIndex===0}>
     <div>
       {experienceArray.length > 0 ? <h3>Experience</h3> : null}
@@ -132,8 +137,8 @@ export default function Experience() {
           <Input
             label="Responsibilities"
             placeholder="Enter responsibilities of your role"
-            value={experience.completed}
-            onChange={(e)=>handleChange(e, "completed")}
+            value={experience.responsibilities}
+            onChange={(e)=>handleChange(e, "responsibilities")}
           />{" "}
           <Input
             name="start-date"
@@ -150,12 +155,37 @@ export default function Experience() {
             onChange={(e)=>handleChange(e, "to")}
           />
           <button onClick={addExperience}>Add Experience</button>
+           <button onClick={handleSubmitEditExperience}>Submit</button>
         </div>
       </div>
       
       <div className="inputs"></div>
     </div>
     </Panel>
+     <Panel className="panel" isActive={activeIndex===1}>
+           <div>
+            <div className="cv-header">
+            <h3>Experience</h3></div>
+            {experienceArray.map((exp, index)=> {
+              return (
+              <div className="info-row" key ={exp.id}>
+                
+              <div className = "info-cell"><h4>{exp.workplace}:</h4></div>
+              <div className = "info-cell"><p>{exp.position}</p></div>
+              <div className = "info-cell"><p>{exp.responsibilities}</p></div>
+              <div className = "info-cell"><h5>From:{' '}</h5><p>{' '}{exp.from}</p></div>
+              <div className = "info-cell"><h5>To:{' '}</h5><p>{' '}{exp.to}</p></div>
+            
+              </div>
+              )
+            })
+            }
+              <button onClick={handleSubmitEditExperience}>Edit</button>
+           </div>
+
+
+    </Panel>
+    </>
   );
 }
 
