@@ -99,7 +99,7 @@ export default function Experience({activeButton}) {
                     value={exp.responsibilities}
                     onChange={(e) => handleEdit(e, exp.id, "responsibilities")}
                   />{" "}
-                  
+                  <div className="date-inputs">
                   <Input
                     label="Start date"
                     type="month"
@@ -112,6 +112,7 @@ export default function Experience({activeButton}) {
                     value={exp.to}
                     onChange={(e) => handleEdit(e, exp.id, "to")}
                   />{" "}
+                  </div>
                   <div className="delete-button-div">
                   <button className = "delete-button" onClick={() => handleDeleteClick(exp.id)}>❌</button>
                 </div>
