@@ -256,6 +256,22 @@ flex-direction: column;
   border-radius: .5rem;
 }
 
+@media(max-width: 450px){
+  .general-data{
+    padding: 1rem 0;
+  }
+
+  .general-details-label{
+    font-size: 1.2rem;
+  }
+
+  .general-input{
+    padding: none;
+    width: 13rem;
+    font-size: 1rem;
+  }
+}
+
 
 .general-input:webkit-autofill,
 .general-input:webkit-autofill:hover,
