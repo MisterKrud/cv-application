@@ -268,10 +268,11 @@ flex-direction: column;
   }
 
   .general-input{
-    padding: none;
+    padding: .5rem !important;
     width: 13rem;
     font-size: 1rem;
   }
+
 }
 
 
@@ -355,7 +356,7 @@ flex-direction: column;
 }
 
 .edit-section-header>h3{
-  background-color:lightsalmon
+  background-color:rgb(248, 204, 168);
 }
 
 
