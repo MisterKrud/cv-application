@@ -65,7 +65,7 @@ export default function Education({activeButton}) {
                 <div className="inputs" key={sch.id}>
         <Input
           type="text"
-          label={'School' + (schools.indexOf(sch)+1)}
+          label={'School' + ' '+(schools.indexOf(sch)+1)}
           
           value={sch.school}
           onChange={(e)=>handleEdit(e, sch.id, "school")}
