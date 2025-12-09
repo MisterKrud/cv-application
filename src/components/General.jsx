@@ -74,6 +74,7 @@ function Input({ type, value, onChange, label, placeholder }) {
       <label className="general-details-label">
         {label}
         {": "}
+        </label>
         <input
           className="general-input"
           type={type}
@@ -84,7 +85,7 @@ function Input({ type, value, onChange, label, placeholder }) {
           name={label}
           required
         />
-      </label>
+      
     </div>
   );
 }
