@@ -12,13 +12,20 @@ function App() {
   const [count, setCount] = useState(0)
   const [activeButtonIndex, setActiveButtonIndex] =useState(1)
 
+  document.title= "CV Builder"
+
   function handleSubmitButton(){
     activeButtonIndex === 1 ? setActiveButtonIndex(0) : setActiveButtonIndex(1);
   }
 
+
+
   return (
     <>
       <div>
+        <SubmitButtonDiv isActive={activeButtonIndex===1}>
+        <h1 className= "page-title">CV Builder</h1>
+        </SubmitButtonDiv>
       
         <General activeButton={activeButtonIndex===1}/>
         <br />
@@ -51,6 +58,7 @@ function SubmitButtonDiv({isActive, children}){
       </>
   )
 }
+
 
 
 

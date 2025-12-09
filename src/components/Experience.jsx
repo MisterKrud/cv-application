@@ -70,7 +70,7 @@ export default function Experience({activeButton}) {
     <>
     <Panel isActive={activeIndex===0}>
     <div>
-      {experienceArray.length > 0 ? <div className="edit-section-header"><h3>Experience</h3></div> : null}
+      <div className="edit-section-header"><h3>Experience</h3></div>
 
     
       <div className="experience-frame">
@@ -99,6 +99,7 @@ export default function Experience({activeButton}) {
                     value={exp.responsibilities}
                     onChange={(e) => handleEdit(e, exp.id, "responsibilities")}
                   />{" "}
+                  
                   <Input
                     label="Start date"
                     type="month"
@@ -126,7 +127,7 @@ export default function Experience({activeButton}) {
             name="workplace"
             type="text"
             label="Company name"
-            placeholder="Enter company"
+            
             value={experience.workplace}
             onChange={(e)=>handleChange(e, "workplace")}
           />{" "}
@@ -138,10 +139,11 @@ export default function Experience({activeButton}) {
           />{" "}
           <Input
             label="Responsibilities"
-            placeholder="Enter responsibilities of your role"
+           
             value={experience.responsibilities}
             onChange={(e)=>handleChange(e, "responsibilities")}
           />{" "}
+          <div className="date-inputs">
           <Input
             name="start-date"
             type="month"
@@ -156,6 +158,7 @@ export default function Experience({activeButton}) {
             value={experience.to}
             onChange={(e)=>handleChange(e, "to")}
           />
+          </div>
           <div className="button-container">
           <button onClick={addExperience}>Add Experience</button>
            <button className="submit-button" onClick={handleSubmitEditExperience}>Submit</button>
@@ -167,7 +170,7 @@ export default function Experience({activeButton}) {
     </div>
     </Panel>
      <Panel className="panel" isActive={activeIndex===1}>
-           <div>
+           <div className = "print">
             <div className="cv-header">
             <h3 className="cv-subheader">Experience</h3></div>
             {experienceArray.map((exp, index)=> {
@@ -177,9 +180,11 @@ export default function Experience({activeButton}) {
               <div className = "info-cell"><h4>{exp.workplace}</h4></div>
               <div className = "info-cell"><p className="position">{exp.position}</p></div>
               <div className = "info-cell"><p className="responsibilities">{exp.responsibilities}</p></div>
+              <div className = "date-inputs">
               <div className = "info-cell"><h5>From:{' '}</h5><p>{' '}{exp.from}</p></div>
               <div className = "info-cell"><h5>To:{' '}</h5><p>{' '}{exp.to}</p></div>
-            
+            </div>
+            <br/>
               </div>
               )
             })
@@ -202,7 +207,7 @@ function Input({ label, placeholder, value, onChange, objKey, type, idx }) {
         <label htmlFor={name}>
           {label}
           {": "}
-
+</label>
           <input
             key={idx}
             type={type}
@@ -211,7 +216,7 @@ function Input({ label, placeholder, value, onChange, objKey, type, idx }) {
             value={value}
             onChange={onChange}
           />
-        </label>
+        
       </div>
     </>
   );

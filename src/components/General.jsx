@@ -31,10 +31,12 @@ export default function General({activeButton}) {
   return (
     <>
       <Panel isActive={activeIndex === 1} onShow={() => setActiveIndex(1)}>
+        <div className = "print">
         <GeneralDetails name={name} email={email} phone={phone} />
         <SubmitButtonDiv isActive={activeButton}>
         <button onClick={handleEditSubmit}>Edit</button>
         </SubmitButtonDiv>
+        </div>
       </Panel>
 
       <Panel isActive={activeIndex === 0} onShow={() => setActiveIndex(0)}>

@@ -56,7 +56,7 @@ export default function Education({activeButton}) {
     <>
     <Panel className="panel" isActive={activeIndex===0}>
     <div>
-      {schools.length > 0 ? <div className="edit-section-header"><h3>Education</h3></div> : null}
+     <div className="edit-section-header"><h3>Education</h3></div>
 
       <div className="education-frame">
         {schools.length > 0
@@ -97,20 +97,20 @@ export default function Education({activeButton}) {
         <Input
           type="text"
           label="School"
-          placeholder="Enter school name"
+        
           value={education.school}
           onChange={(e)=>handleChange(e, "school")}
         />{" "}
         <Input
           label="Course name"
-          placeholder="Enter name of course studied"
+          
           value={education.course}
           onChange={(e)=>handleChange(e, "course")}
         />{" "}
         <Input
           type="date"
           label="Completed"
-          placeholder="Enter date of course completion"
+         
           value={education.completed}
           onChange={(e)=>handleChange(e, "completed")}
         />{" "}
@@ -125,7 +125,7 @@ export default function Education({activeButton}) {
    
     </Panel>
     <Panel className="panel" isActive={activeIndex===1}>
-           <div>
+           <div className="print">
             <div className="cv-header">
             <h3 className="cv-subheader">Education</h3></div>
             {schools.map((sch, index)=> {
@@ -135,7 +135,7 @@ export default function Education({activeButton}) {
               <div className = "info-cell"><h4>{sch.school}</h4></div>
               <div className = "info-cell"><p>{sch.course}</p></div>
               <div className = "info-cell"><h5>Completed:{' '}</h5><p className = "date">{' '}{sch.completed}</p></div>
-            
+            <br/>
               </div>
               )
             })
@@ -157,7 +157,7 @@ function Input({ label, placeholder, value, onChange, type }) {
       <label htmlFor={label}>
         {label}
         {": "}
-
+ </label>
         <input
           type={type}
           name={label}
@@ -165,7 +165,7 @@ function Input({ label, placeholder, value, onChange, type }) {
           value={value}
           onChange={onChange}
         />
-      </label>
+     
     </div>
   );
 }

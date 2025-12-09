@@ -6,7 +6,9 @@
 
 } 
 
-
+.page-title{
+  color: darkblue;
+}
 
 
 button{
@@ -49,6 +51,7 @@ button:active{
 
 .details-input-div{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: .2rem;
     align-items: baseline;
@@ -182,8 +185,12 @@ label{
  
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
 }
 
+.date-inputs{
+  display: flex;
+}
 
 .button-container{
 display:flex;
@@ -197,6 +204,7 @@ flex-direction: column;
   margin-top: 1rem;
   box-shadow: 2px 2px 2px gray;
   border-radius: 5px;;
+  
 }
 
 @media (min-width: 1190px){
@@ -204,6 +212,13 @@ flex-direction: column;
     display:flex;
   }
 
+}
+
+@media (min-width: 700px){
+  .inputs{
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .general-input{
@@ -295,7 +310,9 @@ flex-direction: column;
   
 }
 
-
+.responsibilities{
+  text-align: left;
+}
 
 .hidden{
   visibility: hidden;
@@ -329,6 +346,10 @@ flex-direction: column;
    background-color:green;
    color: white;
    box-shadow: 2px 2px 2px gray;
+}
+
+.print{
+  max-width: 960px;
 }
 
 .back-edit, .final-edit{
